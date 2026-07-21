@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookNest - eBook Library</title>
+  <link rel="stylesheet" href="book.css">
+  <!-- Clean font import -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<!-- Font Awesome CDN for Social Media Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <!-- Navbar Logo -->
+<a href="#" class="logo-link">
+  <img src="logo.jpeg.png" alt="BookNest Logo" class="site-logo">
+</a>
+    
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <i class="fa-solid fa-ellipsis-vertical"></i>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#">AuthorSingle</a>
+      <a href="#">Ebooks</a>
+      <a href="#">Upload Materials</a>
+    </nav>
+    <a href="#" class="btn-login">LOGIN</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>The <span>BookNest</span><br>eBook Library.</h1>
+        <p>Browse from our largest collection of ebooks. Read stories from anywhere, at anytime. Our library offers a wide range of books, from informative journalism titles to self-improvement resources.</p>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop" alt="Stacked Books">
+      </div>
+    </div>
+  </section>
+
+  <!-- Stream & Download Section -->
+  <section class="media-section">
+    <div class="media-container">
+      <div class="media-cards">
+        <div class="card">
+          <div class="card-icon">📖</div>
+          <h3>EBooks</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎧</div>
+          <h3>Audiobooks</h3>
+        </div>
+      </div>
+      <div class="media-info">
+        <h2>Stream and Download</h2>
+        <p>Stream and download audiobooks from anywhere in the world. Search our database for a huge collection of popular ebooks... coming soon.</p>
+        <button class="btn-download">DOWNLOAD BOOKS</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Section -->
+  <section class="support-section">
+    <h2>Support Our Library</h2>
+    <p class="support-desc">You can give in <strong>cash</strong> — to fund new ebooks and keep the site running — or in <strong>kind</strong>, by donating an ebook, data for students who can't afford it, or a bit of your skill.</p>
+
+    <div class="support-card">
+      <div class="support-grid">
+        <!-- Option One: Cash -->
+        <div class="support-col">
+          <span class="option-tag">OPTION ONE</span>
+          <h3>Give in cash</h3>
+          <p>Pick an amount, or set your own.</p>
+          <div class="btn-grid">
+            <button class="select-btn" data-value="₦5,000 Cash">₦5,000</button>
+            <button class="select-btn" data-value="₦10,000 Cash">₦10,000</button>
+            <button class="select-btn" data-value="₦25,000 Cash">₦25,000</button>
+            <button class="select-btn" data-value="Custom Cash Amount">Other</button>
+          </div>
+        </div>
+
+        <div class="divider"><span>CASH OR KIND</span></div>
+
+        <!-- Option Two: Kind -->
+        <div class="support-col">
+          <span class="option-tag">OPTION TWO</span>
+          <h3>Give in kind</h3>
+          <p>Choose what you'd like to give.</p>
+          <div class="btn-grid">
+            <button class="select-btn" data-value="An ebook donation">An ebook</button>
+            <button class="select-btn" data-value="Data / airtime donation">Data / airtime</button>
+            <button class="select-btn" data-value="Skill volunteering">My skills</button>
+            <button class="select-btn" data-value="Other In-Kind Gift">Other</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="support-footer">
+        <p>Choose a cash amount, an in-kind gift, or both.</p>
+        <button id="whatsapp-btn" class="btn-whatsapp">Continue on WhatsApp →</button>
+      </div>
+    </div>
+  </section>
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Brand Details -->
+      <div class="footer-brand">
+        <div class="logo">
+          
+        </div>
+        <p>Empowering readers through accessible digital resources and community support.</p>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="footer-socials">
+  <h3>Follow Us</h3>
+  <div class="social-icons">
+    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 BookNest. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="book.js"></script>
+</body>
+</html>
