@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My eBooks Library</title>
+  <link rel="stylesheet" href="EBOOKS.CSS">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>EBOOKS</h1>
+    <div class="search-container">
+      <!-- Search SVG Icon -->
+      <svg class="search-icon" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search books...">
+    </div>
+  </header>
+
+  <!-- Book Grid Section -->
+  <main>
+    <div class="book-grid" id="bookGrid">
+      
+      <!-- Sample Book 1 -->
+      <div class="book-card" data-title="quran" data-author="The noble quran">
+       
+        <img class="book-cover" src="qur'an.jpeg" alt="">
+        <div class="book-title">Qur'an</div>
+        <div class="book-author">The noble qur'an</div>
+        <!-- Replace href with path to your local file, e.g., href="books/dune.pdf" -->
+        <a href="The Noble Qur'an in the ENGLISH Language.pdf" class="open-btn" target="_blank">Open Book</a>
+      </div>
+
+      <!-- Sample Book 1 -->
+      <div class="book-card" data-title="sahih Albukhari" data-author="Imam bukhari">
+       
+        <img class="book-cover" src="sahih.jpeg" alt="">
+        <div class="book-title">Sahih Albukhari</div>
+        <div class="book-author">Imam Albukhari</div>
+        <!-- Replace href with path to your local file, e.g., href="books/dune.pdf" -->
+        <a href="Sahih al-Bukhari  English The Translation of Sahih Al Bukhari.pdf" class="open-btn" target="_blank">Open Book</a>
+      </div>
+
+
+      <!-- Sample Book 3 -->
+      <div class="book-card" data-title="The Hobbit" data-author="J.R.R. Tolkien">
+        <div class="book-cover">Hobbit Cover</div>
+        <div class="book-title">The Hobbit</div>
+        <div class="book-author">J.R.R. Tolkien</div>
+        <a href="#" class="open-btn" target="_blank">Open Book</a>
+      </div>
+
+    </div>
+
+    <div id="noResults" class="no-results">No books found matching your search.</div>
+  </main>
+
+  <!-- Live Search Logic -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const bookCards = document.querySelectorAll('.book-card');
+    const noResults = document.getElementById('noResults');
+
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      bookCards.forEach(card => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        const author = card.getAttribute('data-author').toLowerCase();
+
+        // Check if search matches title OR author
+        if (title.includes(searchTerm) || author.includes(searchTerm)) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Show "No results" message if no books match
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    });
+  </script>
+
+</body>
+</html>

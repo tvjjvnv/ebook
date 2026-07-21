@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Audio Library</title>
+  <link rel="stylesheet" href="audio.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+      Audio Library
+    </h1>
+    <div class="search-container">
+      <!-- Search SVG Icon -->
+      <svg class="search-icon" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search audio files...">
+    </div>
+  </header>
+
+  <!-- Audio List Section -->
+  <main>
+    <div class="audio-list" id="audioList">
+      
+      <!-- Track 1 -->
+      <div class="audio-card" data-title="Sample Track One" data-artist="Goni Zarami" data-category="Podcast">
+        <div class="track-info">
+          <div class="audio-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+          </div>
+          <div class="track-details">
+            <div class="track-title">Suratul falaq</div>
+            <div class="track-artist">Zarami • Podcast</div>
+          </div>
+        </div>
+        <!-- controlslist="novolume" removes the volume icon/slider -->
+        <audio controls controlslist="novolume" src="113 SURATUL FALAQ [GONI ZARAMI].mp3"></audio>
+      </div>
+
+      <!-- Track 2 -->
+      <div class="audio-card" data-title="zarami" data-artist="Goni Zarami" data-category="podcast">
+        <div class="track-info">
+          <div class="audio-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+          </div>
+          <div class="track-details">
+            <div class="track-title">Suratul kafirun</div>
+            <div class="track-artist">Goni Zarami • podcast</div>
+          </div>
+        </div>
+        <audio controls controlslist="novolume" src="109 SURATUL KAFIRUN [GONI KAFIRUN].mp3"></audio>
+      </div>
+
+      <!-- Track 3 -->
+      <div class="audio-card" data-title="Chapter 1 - Introduction" data-artist="Voiceover" data-category="Audiobook">
+        <div class="track-info">
+          <div class="audio-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+          </div>
+          <div class="track-details">
+            <div class="track-title">Chapter 1 - Introduction</div>
+            <div class="track-artist">Voiceover • Audiobook</div>
+          </div>
+        </div>
+        <audio controls controlslist="novolume" src=""></audio>
+      </div>
+
+    </div>
+
+    <div id="noResults" class="no-results">No audio matching your search.</div>
+  </main>
+
+  <!-- Live Search JavaScript -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const audioCards = document.querySelectorAll('.audio-card');
+    const noResults = document.getElementById('noResults');
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      audioCards.forEach(card => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        const artist = card.getAttribute('data-artist').toLowerCase();
+        const category = card.getAttribute('data-category').toLowerCase();
+
+        if (title.includes(query) || artist.includes(query) || category.includes(query)) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    });
+  </script>
+
+</body>
+</html>
